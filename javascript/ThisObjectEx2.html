@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>this object ex3</title>
+</head>
+<body>
+    
+    <!-- fixed because removed closure -->
+    <script type="text/javascript">
+        var name = "the window";
+
+        var object = {
+            name : "my object",
+
+            getName: function () {
+                return this.name;
+            },
+        };
+        console.log(object.getName()); // my object
+    </script>
+
+</body>
+</html>

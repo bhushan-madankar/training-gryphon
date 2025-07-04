@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closure</title>
+</head>
+<body>
+    
+    <script type="text/javascript">
+        function createFunction() {
+            var result = new Array();
+            // this is not a immediately invoked function expression (IIFE) , this is just a function expression
+            for (var i = 0; i < 10; i++) { // non lexical scope -- using var, hence i is hoisted 
+                result[i] = function() { // function declared but not executed , hence i is not evaluated at this point
+                    // This function will return the value of i when it is executed, not when it is created
+                    return i;
+                };
+            }
+            
+            // solution to the above problem is to use IIFE
+            for (var i = 0; i < 10; i++) { 
+                result[i] = function () { // IIFE to capture the current value of i 
+                    return i;
+                }(); // This will execute the function immediately and return the value of i at that time
+            }
+
+            return result; 
+        }
+        var funcs = createFunction();
+        for (var j = 0; j < funcs.length; j++) {
+            //document.write(funcs[j]() + "<br />"); // This will log 10 for each function
+            document.write(funcs[j] + "<br />"); // 0 to 9 because of IIFE
+        }
+
+
+        // To fix this, we can use let to create a block scope for each iteration
+        function createFunctionWithLet() {
+            var result = new Array();
+            for (let i = 0; i < 10; i++) { // Using let instead of var
+                result[i] = function() { // function expression
+                    return i;
+                };
+            }
+            return result;
+        }
+    </script>
+
+</body>
+</html>

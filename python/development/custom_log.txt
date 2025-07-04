@@ -1,0 +1,10 @@
+Timestamp: 2025-07-03 12:23:12.388017 
+ calculate called with args: (10, 5, '+'), kwargs: {} 
+timestamp: 2025-07-03 12:23:12.392868 Result: 15 
+********************
+Timestamp: 2025-07-03 12:23:12.392868 
+Timestamp: 2025-07-03 12:23:12.392868 
+ calculate called with args: (10, 5, '-'), kwargs: {} 
+timestamp: 2025-07-03 12:23:12.394069 Result: 5 
+********************
+Timestamp: 2025-07-03 12:23:12.394069 

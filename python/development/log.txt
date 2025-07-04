@@ -1,0 +1,22 @@
+Timestamp: 2025-07-03 11:35:07.342383 
+ calculate called with args: (10, 5, '+'), kwargs: {} 
+timestamp: 2025-07-03 11:35:07.342383 
+Result: 15 
+********************
+Timestamp: 2025-07-03 11:35:07.342383 
+Timestamp: 2025-07-03 11:35:07.342383 
+ calculate called with args: (10, 5, '-'), kwargs: {} 
+timestamp: 2025-07-03 11:35:07.345547 
+Result: 5 
+********************
+Timestamp: 2025-07-03 11:35:07.345547 
+Timestamp: 2025-07-03 11:36:39.793934 
+ calculate called with args: (10, 5, '+'), kwargs: {} 
+timestamp: 2025-07-03 11:36:39.793934 Result: 15 
+********************
+Timestamp: 2025-07-03 11:36:39.793934 
+Timestamp: 2025-07-03 11:36:39.797162 
+ calculate called with args: (10, 5, '-'), kwargs: {} 
+timestamp: 2025-07-03 11:36:39.797162 Result: 5 
+********************
+Timestamp: 2025-07-03 11:36:39.797162 

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>example 2</title>
+</head>
+<body>
+    
+<script type="text/javascript">
+    var color = "blue";
+
+    function changeColor() {
+        if (color === "blue") {
+            color = "red"; // Local variable
+        } else {
+            color = "blue"; // Local variable
+        }
+        
+    }
+    changeColor(); // Call the function
+    console.log(color); // This will log "red" because the local variable changed the global variable
+
+
+</script>
+
+</body>
+</html>

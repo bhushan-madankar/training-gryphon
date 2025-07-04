@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exports</title>
+</head>
+<body>
+    <script type="module">
+        // import {sum , color, setColor} from "./exports.js"; //window.color = "red"
+        import * as myModule from "./exports.js"; // Import everything as myModule
+
+        console.log(myModule.color);
+        // myModule.color = "blue"; // This will not change the color in exports.js because it is a constant
+
+        myModule.setColor("blue");
+        console.log(myModule.color); // This will log "blue" because setColor changes the color variable in exports.js
+        
+    </script>
+</body>
+</html>

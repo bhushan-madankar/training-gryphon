@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>This object ex1</title>
+</head>
+<body>
+    
+    <script type="text/javascript">
+        var name = "the window "
+
+var object = {
+    name : "the object",
+    getName : function() {
+        var x = this; // this refers to the object, not the global object
+        return function () {
+            // this refers to the global object, not the object
+            // because the function is called as a normal function
+            //return this.name; // it start the search in the runtime context, because it is inside a closure {nested fucnction}
+
+            // to fix this, we will replace this with something else
+            return x.name; // "the object "
+        };
+    },
+};
+
+console.log(object.getName()()); // "the window "
+    </script>
+
+</body>
+</html>

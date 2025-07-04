@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Execution Context</title>
+</head>
+<body>
+    <script type="text/javascript">
+        // Execution Context
+        // Global Execution Context
+        var color = "blue"; // Global variable
+
+        function changeColor() {
+            var anotherColor = "red"; // Local variable // not get hoisted due to lexical scope
+
+            function swapColors(){
+                var tempColor = anotherColor; // Local variable in inner function // temp = red // [swapColors(),changeColor(),window]
+                anotherColor = color; // Accessing global variable // anotherColor = blue // [swapColors(),changeColor(),window]
+                color = tempColor; // Changing global variable // color = red // [swapColors(),changeColor(),window] this array is called execution context stack (scope chain augmentation) 1st element is activation object
+            }
+
+            // order of scope chain is execution context. // wider scope has least privilege
+            swapColors(); // Call the inner function
+        }
+        changeColor(); // Call the outer function
+        console.log(color); // This will log "red" because the global variable was changed by the inner function
+        // console.log searches in window scope 
+    </script>
+</body>
+</html>

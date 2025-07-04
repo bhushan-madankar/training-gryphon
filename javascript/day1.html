@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 1</title>
+</head>
+<body>
+    <!-- hoisting and lexical , non lexical scope -->
+    <!-- <script type="text/javascript">
+        
+        if(true){ // non lexical
+            // var x = 100;  // hoisting
+            let x = 100; // no hoisting
+            x= 200;
+            console.log(x); // let statememt allows mutation 
+        }
+        console.log(x); // Due to hoisting , non lexical scope, var is accessible here
+
+        function abc(){ // lexical scope
+            var y = "hello world" // no hoisting
+        }
+        abc();
+        console.log(y);
+
+    </script> -->
+   
+    <!-- function declaration vs function expression -->
+    <!-- <script type ="text/javascript">
+        
+        //abc(); // it will work due to hoisting , not a good practice to call function before declaration
+        function abc(){ // function declaration hoisting
+            console.log("Hello World");
+        }
+        abc();
+
+        xyz = function(){ // function expression 
+            console.log("BYE World");
+        }
+        xyz(); // xyz is identifier for the function expression, it is not hoisted
+
+    </script> -->
+
+    <!-- with  -->
+    <!-- <script type="text/javascript">
+       
+        function xyz() {
+            var x = 100;
+            console.log(x);
+
+            with (document.location){
+                var x = 500;
+            }
+            console.log(x); // 500, with statement changes the scope of x to document.location // [with(),xyz(),window]
+        }
+        xyz(); // 500
+    </script> -->
+
+    <!-- primitive and reference type scope -->
+    <!-- <script type="text/javascript">
+        var x = 100; 
+        x.a = 500;
+        console.log(x.a); // undefined, primitive types are immutable, x is a number not an object
+
+        obj1 = new Object();
+        obj1.b = 100;
+        console.log(obj1.b); // 100, obj1 is an object and can have properties
+
+    </script> -->
+
+    <!-- referred by value vs referred by reference -->
+    <script type="text/javascript" >
+
+        /* var a = 1000;
+        var b =a ; //reffered by value 1000 -- stack memory (copy of value)
+        console.log(a); // 1000
+        console.log(b); // 1000
+        a = 2000;
+        console.log(a); // 2000
+        console.log(b); // 1000, b is a copy of a, not a reference */
+
+        obj1 = new Object();
+        obj2 = obj1; // referred by reference -- heap memory (shared memory)
+        
+        obj1.a = 1000;
+        console.log(obj1.a); // 1000
+        console.log(obj2.a); // 1000, obj2 is a reference to obj1, so it reflects the changes made to obj1
+        
+        obj2.a = 2000;
+        console.log(obj1.a); // 2000, obj1 is also changed because obj2 is a reference to obj1
+        console.log(obj2.a); // 2000, obj2 reflects the changes made to obj1
+
+        obj2.b = 3000; // adding a new property to obj2
+        console.log(obj1.b); // 3000, obj1 is also changed because obj2 is a reference to obj1
+        console.log(obj2.b); // 3000, obj2 has property b
+
+    </script>
+
+</body>
+</html>
